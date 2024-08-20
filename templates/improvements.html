@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>AI-Generated Improvements</h2>
+
+{% if improvements %}
+    <div>
+        <h3>Suggested Improvements:</h3>
+        {% for improvement in improvements %}
+            <p>{{ improvement.improvement }}</p>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>No improvements available.</p>
+{% endif %}
+{% endblock %}

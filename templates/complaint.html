@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Warranty Complaint Form</h2>
+<form method="post">
+    <label for="complaint_id">Complaint ID:</label>
+    <input type="text" id="complaint_id" name="complaint_id" required>
+    <label for="complaint_text">Complaint Text:</label>
+    <textarea id="complaint_text" name="complaint_text" required></textarea>
+    <label for="product_id">Product ID:</label>
+    <input type="text" id="product_id" name="product_id" required>
+    <label for="complaint_date">Complaint Date:</label>
+    <input type="date" id="complaint_date" name="complaint_date" required>
+    <label for="resolved">Resolved:</label>
+    <input type="text" id="resolved" name="resolved" required>
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

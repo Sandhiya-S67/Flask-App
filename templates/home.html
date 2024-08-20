@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Welcome, {{ session['username'] }}</h2>
+<p>Select an option from the navigation bar to get started.</p>
+
+<h3>How it Works</h3>
+<p>This web application provides a seamless way for users to submit warranty complaints and customer feedback. Follow the steps below to get started:</p>
+<ul>
+    <li>Navigate to the 'Warranty Complaint' section to submit your warranty-related issues.</li>
+    <li>Use the 'Customer Feedback' section to provide your valuable feedback on our products.</li>
+    <li>Check the 'Improvements' section to see AI-based responses and suggested improvements based on submitted data.</li>
+</ul>
+
+<h3>Features</h3>
+<ul>
+    <li>Easy-to-use forms for submitting complaints and feedback.</li>
+    <li>AI-based analysis of submissions to suggest product improvements.</li>
+    <li>Responsive design for a seamless experience on any device.</li>
+</ul>
+
+{% endblock %}
