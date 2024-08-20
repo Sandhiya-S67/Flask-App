@@ -1,9 +1,26 @@
 {
-    "version":2,
-    "builds":[
-        {"src":"app.py" , "use":"@vercel/python"}
+    "version": 2,
+    "builds": [
+      {
+        "src": "app.py",
+        "use": "@vercel/python"
+      }
     ],
-    "routes" : [
-        {"src":"/(.*)" , "dest":"app.py"}
-    ]
-}
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/app.py"
+      }
+    ],
+    "env": {
+      "MONGODB_URI": "mongodb://localhost:27017/automotive_db",
+      "GEMINI_API_KEY": "AIzaSyCDo-II0-44Fuq1PKnaDo9h6w7GL3Nie9U"
+    },
+    "functions": {
+      "api/index.py": {
+        "runtime": "python3.9"
+      }
+    },
+    "buildCommand": "pip install -r requirements.txt"
+  }
+  
