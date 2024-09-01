@@ -14,7 +14,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 5000
 
 # Define environment variable
-ENV GEMINI_API_KEY=your_key_here
+ENV GEMINI_API_KEY=AIzaSyCDo-II0-44Fuq1PKnaDo9h6w7GL3Nie9U
 
 # Run app.py when the container launches
 CMD ["python", "app.py"]
