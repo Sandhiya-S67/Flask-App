@@ -6,7 +6,7 @@ import ai_model
 app = Flask(__name__)
 app.secret_key = "d53cb57debad104fff7a382024d6cd9759c48ae567298a3c"
 
-app.config["MONGO_URI"] = "mongodb+srv://sand22130cs:Sandy@2005@cluster0.gkvp3kn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+app.config["MONGO_URI"] = "mongodb://localhost:27017/automotive_db"
 mongo = PyMongo(app)
 
 @app.route('/')
