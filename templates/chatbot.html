@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Chatbot</h2>
+<form method="post" id="chat-form">
+    <label for="user_query">Your Query:</label>
+    <textarea id="user_query" name="user_query" required></textarea>
+    <label for="brand_type">Brand Type:</label>
+    <select id="brand_type" name="brand_type" required>
+        <option value="passenger_vehicles">Passenger Vehicles</option>
+        <option value="electric_vehicles">Electric Vehicles</option>
+        <option value="luxury_vehicles">Luxury Vehicles</option>
+    </select>
+    <button type="submit">Ask</button>
+</form>
+<div id="response"><p></p></div>
+
+<script>
+document.getElementById('chat-form').onsubmit = async function(event) {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const response = await fetch('/chatbot', {
+        method: 'POST',
+        body: formData
+    });
+    const result = await response.json();
+    document.getElementById('response').innerText = result.response;
+};
+</script>
+{% endblock %}
