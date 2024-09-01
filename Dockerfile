@@ -13,9 +13,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Make port 5000 available to the world outside this container
 EXPOSE 5000
 
-# Set environment variables
-ENV FLASK_APP=app.py
-ENV FLASK_ENV=production
+# Define environment variable
+ENV GEMINI_API_KEY=your_key_here
 
-# Run the application
-CMD ["flask", "run", "--host=0.0.0.0"]
+# Run app.py when the container launches
+CMD ["python", "app.py"]
