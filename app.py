@@ -1,11 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 from flask_pymongo import PyMongo
-from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 import ai_model
 
 app = Flask(__name__)
-app.secret_key = "d53cb57debad104fff7a382024d6cd9759c48ae567298a3c"  
+app.secret_key = "d53cb57debad104fff7a382024d6cd9759c48ae567298a3c"
 
 app.config["MONGO_URI"] = "mongodb://localhost:27017/automotive_db"
 mongo = PyMongo(app)
@@ -76,7 +75,7 @@ def feedback():
     return render_template('feedback.html')
 
 @app.route('/improvements')
-def improvements():
+def improvements_view():
     complaints = list(mongo.db.complaints.find())
     feedbacks = list(mongo.db.feedbacks.find())
 
@@ -85,11 +84,10 @@ def improvements():
 
     return render_template('improvements.html', improvements=improvements_list)
 
-
 @app.route('/logout')
 def logout():
     session.pop('username', None)
     return redirect(url_for('login'))
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True, port=5000)
+    app.run(debug=True)

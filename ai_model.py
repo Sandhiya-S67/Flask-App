@@ -5,7 +5,7 @@ genai.configure(api_key="AIzaSyCDo-II0-44Fuq1PKnaDo9h6w7GL3Nie9U")
 model = genai.GenerativeModel('gemini-1.5-flash')
 
 def generate_improvements(complaints, feedbacks):
-    prompt = "Based on the following complaints and feedbacks, suggest improvements for the automotive features:\n"
+    prompt = "Based on the following complaints and feedbacks, suggest detailed improvements for the automotive features:\n"
     
     for complaint in complaints:
         prompt += f"Complaint: {complaint['complaint_text']}\n"
